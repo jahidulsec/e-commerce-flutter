@@ -30,6 +30,7 @@ dependencies:
   http: any
   url_launcher: ^6.3.1
   flutter_native_splash: ^2.4.6
+  smooth_page_indicator: ^1.2.1
 
 dev_dependencies:
   flutter_test:
