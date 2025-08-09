@@ -14,6 +14,7 @@ class OnBoardingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
+    // create controller
     final controller = Get.put(OnboardingController());
 
     return Scaffold(

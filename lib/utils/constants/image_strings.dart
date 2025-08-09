@@ -2,6 +2,10 @@
 
 /// This class contains all the App Images in String formats.
 class TImages {
+  // -- App Logos
+  static const String darkAppLogo = 'assets/logo/t-store-splash-logo-black.png';
+  static const String lightAppLogo = 'assets/logo/t-store-splash-logo-white.png';
+  
   // -- Splash Screen Images
   static const String tSplashTopIcon = "assets/images/splash_images/splash-top-icon.png";
   static const String tSplashImage = "assets/images/splash_images/splash-screen-image.png";
