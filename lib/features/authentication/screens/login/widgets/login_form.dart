@@ -1,20 +1,18 @@
+import 'package:e_commerce_app/features/authentication/screens/signup/signup.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class LoginForm extends StatelessWidget {
-  const LoginForm({
-    super.key,
-  });
+  const LoginForm({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Form(
       child: Padding(
-        padding: const EdgeInsets.symmetric(
-          vertical: TSizes.spaceBtwSections,
-        ),
+        padding: const EdgeInsets.symmetric(vertical: TSizes.spaceBtwSections),
         child: Column(
           children: [
             // email
@@ -24,9 +22,9 @@ class LoginForm extends StatelessWidget {
                 labelText: TTexts.email,
               ),
             ),
-    
+
             const SizedBox(height: TSizes.spaceBtwInputFields),
-    
+
             // password
             TextFormField(
               decoration: InputDecoration(
@@ -35,7 +33,7 @@ class LoginForm extends StatelessWidget {
                 suffixIcon: Icon(Iconsax.eye_slash),
               ),
             ),
-    
+
             // remember me & forget password
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -47,7 +45,7 @@ class LoginForm extends StatelessWidget {
                     Text(TTexts.tRememberMe),
                   ],
                 ),
-    
+
                 // forget password
                 TextButton(
                   onPressed: () {},
@@ -55,9 +53,9 @@ class LoginForm extends StatelessWidget {
                 ),
               ],
             ),
-    
+
             const SizedBox(height: TSizes.spaceBtwItems),
-    
+
             // sign in button
             SizedBox(
               width: double.infinity,
@@ -66,15 +64,15 @@ class LoginForm extends StatelessWidget {
                 child: Text(TTexts.tLogin),
               ),
             ),
-    
+
             const SizedBox(height: TSizes.spaceBtwItems),
-    
+
             /// create account button
             SizedBox(
               width: double.infinity,
               child: OutlinedButton(
-                onPressed: () {},
                 child: Text(TTexts.tSignup),
+                onPressed: () => Get.to(SignupScreen()),
               ),
             ),
           ],
@@ -83,4 +81,3 @@ class LoginForm extends StatelessWidget {
     );
   }
 }
-

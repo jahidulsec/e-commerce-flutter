@@ -1,3 +1,5 @@
+import 'package:e_commerce_app/utils/constants/colors.dart';
+import 'package:e_commerce_app/utils/theme/widget_themes/checkbox_theme.dart';
 import 'package:flutter/material.dart';
 
 import 'widget_themes/appbar_theme.dart';
@@ -17,6 +19,10 @@ class TAppTheme {
     elevatedButtonTheme: TElevatedButtonTheme.lightElevatedButtonTheme,
     outlinedButtonTheme: TOutlinedButtonTheme.lightOutlinedButtonTheme,
     inputDecorationTheme: TTextFormFieldTheme.lightInputDecorationTheme,
+    checkboxTheme: TCheckboxTheme.lightCheckboxTheme,
+    textButtonTheme: TextButtonThemeData(
+      style: TextButton.styleFrom(foregroundColor: TColors.accent),
+    ),
   );
 
   static ThemeData darkTheme = ThemeData(
@@ -27,5 +33,6 @@ class TAppTheme {
     elevatedButtonTheme: TElevatedButtonTheme.darkElevatedButtonTheme,
     outlinedButtonTheme: TOutlinedButtonTheme.darkOutlinedButtonTheme,
     inputDecorationTheme: TTextFormFieldTheme.darkInputDecorationTheme,
+    checkboxTheme: TCheckboxTheme.darkCheckboxTheme,
   );
 }

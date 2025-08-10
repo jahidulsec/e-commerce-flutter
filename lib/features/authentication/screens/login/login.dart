@@ -1,7 +1,7 @@
-import 'package:e_commerce_app/features/authentication/screens/onboarding/login/widgets/form_divider.dart';
-import 'package:e_commerce_app/features/authentication/screens/onboarding/login/widgets/form_footer.dart';
-import 'package:e_commerce_app/features/authentication/screens/onboarding/login/widgets/form_header.dart';
-import 'package:e_commerce_app/features/authentication/screens/onboarding/login/widgets/login_form.dart';
+import 'package:e_commerce_app/shared/widgets/authentication/form_divider.dart';
+import 'package:e_commerce_app/shared/widgets/authentication/form_footer.dart';
+import 'package:e_commerce_app/features/authentication/screens/login/widgets/form_header.dart';
+import 'package:e_commerce_app/features/authentication/screens/login/widgets/login_form.dart';
 import 'package:e_commerce_app/shared/styles/spacing.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
@@ -24,15 +24,15 @@ class LoginScreen extends StatelessWidget {
               FormHeader(isDarkMode: isDarkMode),
 
               // form
-              LoginForm(),
+              const LoginForm(),
 
               /// divider
-              FormDivider(isDarkMode: isDarkMode),
+              FormDivider(dividerText: "Or sign in with"),
 
               const SizedBox(height: TSizes.spaceBtwItems),
 
               /// footer
-              FormFooter(),
+              const FormFooter(),
             ],
           ),
         ),

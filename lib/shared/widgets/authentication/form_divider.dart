@@ -1,13 +1,15 @@
 import 'package:e_commerce_app/utils/constants/colors.dart';
+import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 
 class FormDivider extends StatelessWidget {
-  const FormDivider({super.key, required this.isDarkMode});
+  const FormDivider({super.key, required this.dividerText});
 
-  final bool isDarkMode;
+  final String dividerText;
 
   @override
   Widget build(BuildContext context) {
+    final isDarkMode = THelperFunctions.isDarkMode(context);
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -19,7 +21,7 @@ class FormDivider extends StatelessWidget {
             endIndent: 5,
           ),
         ),
-        Text("Or Sign in with", style: Theme.of(context).textTheme.labelMedium),
+        Text(dividerText, style: Theme.of(context).textTheme.labelMedium),
         Flexible(
           child: Divider(
             color: isDarkMode ? TColors.darkGrey : TColors.grey,
