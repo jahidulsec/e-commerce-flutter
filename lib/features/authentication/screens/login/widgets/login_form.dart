@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/features/authentication/screens/password_configuration/foget_password.dart';
 import 'package:e_commerce_app/features/authentication/screens/signup/signup.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/constants/text_strings.dart';
@@ -48,7 +49,7 @@ class LoginForm extends StatelessWidget {
 
                 // forget password
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () => Get.to(const FogetPasswordScreen()),
                   child: Text(TTexts.tForgetPassword),
                 ),
               ],
