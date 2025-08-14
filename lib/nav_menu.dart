@@ -1,32 +1,41 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
-class NavMenu extends StatefulWidget {
+class NavMenu extends StatelessWidget {
   const NavMenu({super.key});
 
   @override
-  State<NavMenu> createState() => _NavMenuState();
-}
-
-class _NavMenuState extends State<NavMenu> {
-  int screen = 0;
-
-  @override
   Widget build(BuildContext context) {
+    final controller = Get.put(NavbarController());
+
     return Scaffold(
-      bottomNavigationBar: NavigationBar(
-        selectedIndex: screen,
-        onDestinationSelected: (value) => setState(() {
-          screen = value;
-        }),
-        destinations: const [
-          NavigationDestination(icon: Icon(Iconsax.home), label: "Home"),
-          NavigationDestination(icon: Icon(Iconsax.shop), label: "Store"),
-          NavigationDestination(icon: Icon(Iconsax.heart), label: "Wishlist"),
-          NavigationDestination(icon: Icon(Iconsax.user), label: "Profile"),
-        ],
+      bottomNavigationBar: Obx(
+        () => NavigationBar(
+          selectedIndex: controller.selectedIndex.value,
+          onDestinationSelected: (value) {
+            controller.selectedIndex.value = value;
+          },
+          destinations: const [
+            NavigationDestination(icon: Icon(Iconsax.home), label: "Home"),
+            NavigationDestination(icon: Icon(Iconsax.shop), label: "Store"),
+            NavigationDestination(icon: Icon(Iconsax.heart), label: "Wishlist"),
+            NavigationDestination(icon: Icon(Iconsax.user), label: "Profile"),
+          ],
+        ),
       ),
-      body: Container(),
+      body: Obx(() => controller.screens[controller.selectedIndex.value]),
     );
   }
+}
+
+class NavbarController extends GetxController {
+  final Rx<int> selectedIndex = 0.obs;
+
+  final screens = [
+    Container(color: Colors.amber),
+    Container(color: Colors.blue),
+    Container(color: Colors.red),
+    Container(color: Colors.green),
+  ];
 }
