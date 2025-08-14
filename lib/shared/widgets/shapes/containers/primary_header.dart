@@ -12,7 +12,7 @@ class PrimaryHeaderContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return CurvedEdgeWidget(
       child: Container(
-        color: TColors.accent.withValues(alpha: 0.5),
+        color: TColors.accent.withValues(alpha: 0.7),
         padding: const EdgeInsets.all(0),
         child: SizedBox(
           height: 400,

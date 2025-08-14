@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/features/store/screens/home/widgets/appbar.dart';
 import 'package:e_commerce_app/shared/widgets/shapes/containers/primary_header.dart';
 import 'package:flutter/material.dart';
 
@@ -8,7 +9,17 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        child: Column(children: [PrimaryHeaderContainer(child: Column())]),
+        child: Column(
+          children: [
+            PrimaryHeaderContainer(
+              child: Column(
+                children: [
+                  const HomeAppbar(),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
