@@ -1,5 +1,8 @@
 import 'package:e_commerce_app/features/store/screens/home/widgets/appbar.dart';
+import 'package:e_commerce_app/features/store/screens/home/widgets/home_category.dart';
 import 'package:e_commerce_app/shared/widgets/shapes/containers/primary_header.dart';
+import 'package:e_commerce_app/shared/widgets/shapes/containers/search_container.dart';
+import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -14,7 +17,16 @@ class HomeScreen extends StatelessWidget {
             PrimaryHeaderContainer(
               child: Column(
                 children: [
+                  // appbar
                   const HomeAppbar(),
+                  const SizedBox(height: TSizes.spaceBtwSections),
+
+                  // search bar
+                  SearchContainer(text: "Search in store"),
+                  const SizedBox(height: TSizes.spaceBtwSections),
+
+                  // categories
+                  const HomeCategory(),
                 ],
               ),
             ),
@@ -24,4 +36,5 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
 
